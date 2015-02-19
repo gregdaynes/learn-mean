@@ -14,7 +14,9 @@ var express    = require('express')
 
 // !MODULES ====================
 // =============================
-var login  = require('login')
+var models = require('models')
+  , users  = require('users')
+  , login  = require('login')
   , cors   = require('cors')
   ;
   
@@ -22,7 +24,7 @@ var login  = require('login')
   
   
   
-// !CONFIGURATION ==============
+// !SETUP ======================
 // =============================
 
 // connect to the database
