@@ -6,7 +6,7 @@ var express    = require('express')
   , bodyParser = require('body-parser')
   , morgan     = require('morgan')
   , mongoose   = require('mongoose')
-  , config     = require('./config')
+  , config     = require('config')
   , path       = require('path')
   , app        = express()
   ;
