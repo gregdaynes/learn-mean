@@ -15,7 +15,6 @@ var express    = require('express')
 // !MODULES ====================
 // =============================
 var login  = require('login')
-  , signup = require('signup')
   , cors   = require('cors')
   ;
   
@@ -52,9 +51,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // login
 app.use(login)
-
-    // signup
-   .use(signup)
    
    // catchall
    .get('*', function(req, res) {
