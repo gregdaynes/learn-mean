@@ -1,20 +1,46 @@
 
-
-
-
-
 // GULP ========================
 // =============================
+// must specify NODE_PATH before running gulp
+// NODE_PATH=app gulp dev
 
 // load the plugins
 var gulp       = require('gulp')
   , nodemon    = require('gulp-nodemon')
   , watch      = require('gulp-watch')
   , livereload = require('gulp-livereload')
+  , childProc  = require('child_process')
+  , ngrok      = require('ngrok')
+  , config     = require('config')
   ;
+  
+
+// NGROK -----------------------
+// depends on nodemon
+gulp.task('ngrok', ['nodemon'], function(callback) {
+    err = null;
+    ngrok.connect(config.port, function(grokErr, url) {
+        err = grokErr;
+        console.log('App reachable @ ' + url);
+    });
+    callback(err);
+});
+
+// MONGO -----------------------
+gulp.task('mongo', function(callback) {
+    err = null;
+    childProc.exec('mongod --dbpath ./db', function(procErr,stdout) {
+        console.log(stdout);
+        err = procErr;
+    });
+    
+    callback(err);
+});
 
 // NODEMON ---------------------
-gulp.task('nodemon', function() {
+// depends on mongo
+gulp.task('nodemon', ['mongo'], function(callback) {
+    childProc.exec('NODE_PATH=app');
     nodemon({
         script: 'app.js',
         ext: 'js html'
@@ -25,6 +51,8 @@ gulp.task('nodemon', function() {
         .on('restart', function() {
             console.log('Restarted!');
         });
+        
+    callback(err);
 });
 
 // JS --------------------------
@@ -49,4 +77,5 @@ gulp.task('watch', function() {
 });
 
 // defining the main gulp task
-gulp.task('default', ['nodemon']);
+gulp.task('default', ['mongo', 'nodemon']);
+gulp.task('dev'    , ['mongo', 'nodemon', 'ngrok']);
