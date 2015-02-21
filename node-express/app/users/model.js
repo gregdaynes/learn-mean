@@ -4,10 +4,14 @@ var mongoose = require('mongoose')
   , ObjectId = Schema.ObjectId
   ;
   
-var UsersSchema = Schema({
-    name: { type: String },
+var UserSchema = Schema({
+    name: String,
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    }
 });
 
-Users = mongoose.model('Users', UsersSchema);
 
-exports.usersModel = Users;
+module.exports = mongoose.model('User', UserSchema);
