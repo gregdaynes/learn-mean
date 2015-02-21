@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>262DA795-D5F1-4B5F-A730-0831CDD62D92</UUID>
-        <nextObjectID>121</nextObjectID>
+        <nextObjectID>124</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -111,7 +111,7 @@
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z118 z108"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z108">
-        <attribute name="value" type="string">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiR3JlZ29yeSBEYXluZXMiLCJ1c2VybmFtZSI6ImdyZWdkYXluZXMiLCJpYXQiOjE0MjM0NDQ2OTcsImV4cCI6MTQyMzUzMTA5N30.zPtbx9WcHdANpYzIZrz7IbF6ORkqhCcxnPb4KmIughA</attribute>
+        <attribute name="value" type="string">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiR3JlZ29yeSBEYXluZXMiLCJ1c2VybmFtZSI6ImdyZWdkYXluZXMiLCJpYXQiOjE0MjM0NTU1NTQsImV4cCI6MTQyMzU0MTk1NH0.HxxVJfRmC_NhNN6SNCydQ1GCtdeqrjAzlJzkvZ6EPv4</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">x-access-token</attribute>
         <attribute name="enabled" type="bool">1</attribute>
@@ -125,7 +125,7 @@
         <attribute name="order" type="int64">2</attribute>
         <attribute name="name" type="string">Users</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z107 z110 z112"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z107 z110 z112 z122"></relationship>
         <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
@@ -140,14 +140,14 @@
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
         <attribute name="body" type="string">[{"data":{"keyValues":[["name","Gregory Daynes",true],["username","gregdaynes",true],["password","supersecret",true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
-        <attribute name="order" type="int64">2</attribute>
+        <attribute name="order" type="int64">3</attribute>
         <attribute name="name" type="string">Create User</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z109"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z121 z111"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z111">
-        <attribute name="value" type="string">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiR3JlZ29yeSBEYXluZXMiLCJ1c2VybmFtZSI6ImdyZWdkYXluZXMiLCJpYXQiOjE0MjM0NDQ2OTcsImV4cCI6MTQyMzUzMTA5N30.zPtbx9WcHdANpYzIZrz7IbF6ORkqhCcxnPb4KmIughA</attribute>
+        <attribute name="value" type="string">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiR3JlZ29yeSBEYXluZXMiLCJ1c2VybmFtZSI6ImdyZWdkYXluZXMiLCJpYXQiOjE0MjM0NTU1NTQsImV4cCI6MTQyMzU0MTk1NH0.HxxVJfRmC_NhNN6SNCydQ1GCtdeqrjAzlJzkvZ6EPv4</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">x-access-token</attribute>
         <attribute name="enabled" type="bool">1</attribute>
@@ -172,7 +172,7 @@
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z113 z120"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z113">
-        <attribute name="value" type="string">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiR3JlZ29yeSBEYXluZXMiLCJ1c2VybmFtZSI6ImdyZWdkYXluZXMiLCJpYXQiOjE0MjM0NDQ2OTcsImV4cCI6MTQyMzUzMTA5N30.zPtbx9WcHdANpYzIZrz7IbF6ORkqhCcxnPb4KmIughA</attribute>
+        <attribute name="value" type="string">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiR3JlZ29yeSBEYXluZXMiLCJ1c2VybmFtZSI6ImdyZWdkYXluZXMiLCJpYXQiOjE0MjM0NTU1NTQsImV4cCI6MTQyMzU0MTk1NH0.HxxVJfRmC_NhNN6SNCydQ1GCtdeqrjAzlJzkvZ6EPv4</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">x-access-token</attribute>
         <attribute name="enabled" type="bool">1</attribute>
@@ -190,7 +190,7 @@
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">[{"data":{"keyValues":[["username","gregdaynes",true],["password","supersecret",true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
+        <attribute name="body" type="string">[{"data":{"json":"{\\"username\\":\\"gregdaynes\\",\\"password\\":\\"supersecret\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
         <attribute name="order" type="int64">0</attribute>
         <attribute name="name" type="string">Authenticate User</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z115"></relationship>
@@ -266,5 +266,40 @@
         <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z110"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z122">
+        <attribute name="uuid" type="string">900E9FD2-1D8B-46F0-A56B-11275C16308F</attribute>
+        <attribute name="url" type="string">http://localhost:8080/api/me</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">GET</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="order" type="int64">2</attribute>
+        <attribute name="name" type="string">me</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z109"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z123 z124"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z123">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">1</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z122"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z124">
+        <attribute name="value" type="string">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiR3JlZ29yeSBEYXluZXMiLCJ1c2VybmFtZSI6ImdyZWdkYXluZXMiLCJpYXQiOjE0MjM2NzYxMTUsImV4cCI6MTQyMzc2MjUxNX0.tvlo3EFGRYuXNdacn56g97jcsWkAMmC0Cg9EpUscLyU</attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string">x-access-token</attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z122"></relationship>
     </object>
 </database>
