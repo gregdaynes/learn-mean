@@ -14,7 +14,8 @@ var express    = require('express')
 
 // !MODULES ====================
 // =============================
-var users  = require('users')
+var auth   = require('authentication')
+  , users  = require('users')
   , login  = require('login')
   , cors   = require('cors')
   ;
@@ -35,6 +36,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
    
    // configure app to handle cors
    .use(cors)
+   
+   // authentcation
+   .use(auth)
    
    // log all requests to the console
    .use(morgan('dev'))

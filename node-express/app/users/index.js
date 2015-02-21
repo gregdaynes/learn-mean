@@ -1,5 +1,5 @@
 
-var User   = require('users/model')
+var User    = require('users/model')
   , express = require('express')
   , app     = module.exports = express()
   ;
@@ -30,6 +30,8 @@ app.route('/users')
         // set user info from the request
         user.name = req.body.name;
         user.username = req.body.username;
+        user.email = req.body.email;
+        user.password = req.body.password;
         
         // save user and check for errors
         user.save(function(err) {
