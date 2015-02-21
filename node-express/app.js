@@ -14,8 +14,7 @@ var express    = require('express')
 
 // !MODULES ====================
 // =============================
-var models = require('models')
-  , users  = require('users')
+var users  = require('users')
   , login  = require('login')
   , cors   = require('cors')
   ;
@@ -53,7 +52,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // login
 app.use(login)
-   
+   .use(users)
    // catchall
    .get('*', function(req, res) {
        res.sendFile(path.join(__dirname + '/public/index.html'))
