@@ -6,7 +6,6 @@ var User    = require('users/model')
   
 app.route('/users')
 
-
     // get all users
     .get(function(req, res) {
         

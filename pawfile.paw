@@ -80,7 +80,7 @@
         <relationship name="variables" type="0/0" destination="LMENVIRONMENTVARIABLE"></relationship>
     </object>
     <object type="LMREQUEST" id="z105">
-        <attribute name="body" type="string">[{"data":{"keyValues":[["token","12345",true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
+        <attribute name="body" type="string">[{"data":{"keyValues":[]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
         <attribute name="uuid" type="string">0B48BB06-53C3-4466-9017-58888553A816</attribute>
         <attribute name="url" type="string">http://127.0.0.1:8080/users</attribute>
         <attribute name="storecookies" type="bool">1</attribute>

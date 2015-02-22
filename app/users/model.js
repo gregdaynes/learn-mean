@@ -20,9 +20,12 @@ var UserSchema = Schema({
         type: String,
         required: true,
         select: false
+    },
+    roles: {
+        type: String,
+        default: 'guest'
     }
 });
-
 
 // hash password before save
 UserSchema.pre('save', function(next) {
@@ -46,6 +49,18 @@ UserSchema.pre('save', function(next) {
     }); 
 });
 
+
+UserSchema.post('save', function(doc) {
+    var roles = doc.roles;
+    
+    if (!roles.length) {
+        roles = ['user'];
+    }
+    
+    acl.addUserRoles(doc._id.toString(), roles, function(err) {
+        
+    });
+})
 
 // compare give password with hash
 UserSchema.methods.comparePassword = function(password) {

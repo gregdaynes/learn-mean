@@ -20,15 +20,12 @@ var auth   = require('authentication')
   , cors   = require('cors')
   ;
   
-  
-  
-  
-  
+
 // !SETUP ======================
 // =============================
 
 // connect to the database
-mongoose.connect(config.database);
+var dbc = mongoose.connect(config.database);
 
 // use bodyParser to grab information from POST requests
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -36,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
    
    // configure app to handle cors
    .use(cors)
-   
+      
    // authentcation
    .use(auth)
    
@@ -46,9 +43,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
    // static files
    .use(express.static(__dirname + '/public'))
    ;
-
-
-
 
 
 // !ROUTES =====================

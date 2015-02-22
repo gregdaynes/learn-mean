@@ -5,7 +5,8 @@ var User    = require('users/model')
   , express = require('express')
   , app     = module.exports = express()
   ;
-
+  
+  
 app.post('/authenticate', function(req, res) {
     
     // find the user
@@ -56,7 +57,7 @@ app.post('/authenticate', function(req, res) {
 });
 
 app.use(function(req, res, next) {
-    
+        
     console.log('Someone has visited the app');
     console.log(req.params);
     
