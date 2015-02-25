@@ -5,7 +5,6 @@
 var express    = require('express')
   , bodyParser = require('body-parser')
   , morgan     = require('morgan')
-  , mongoose   = require('mongoose')
   , config     = require('config')
   , path       = require('path')
   , app        = express()
@@ -15,6 +14,7 @@ var express    = require('express')
 // !MODULES ====================
 // =============================
 var auth   = require('authentication')
+  , acl    = require('access-control-list')
   , users  = require('users')
   , login  = require('login')
   , cors   = require('cors')
@@ -24,8 +24,9 @@ var auth   = require('authentication')
 // !SETUP ======================
 // =============================
 
-// connect to the database
-var dbc = mongoose.connect(config.database);
+
+// !MIDDLEWARE =================
+// =============================
 
 // use bodyParser to grab information from POST requests
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -33,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
    
    // configure app to handle cors
    .use(cors)
-      
+         
    // authentcation
    .use(auth)
    
@@ -43,6 +44,20 @@ app.use(bodyParser.urlencoded({ extended: true }))
    // static files
    .use(express.static(__dirname + '/public'))
    ;
+
+
+
+// !DEV AREA ===================   
+// =============================
+
+
+
+// assign permissinos to roles
+// guests view posts
+
+
+
+
 
 
 // !ROUTES =====================

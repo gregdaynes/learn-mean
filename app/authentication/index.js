@@ -40,7 +40,9 @@ app.post('/authenticate', function(req, res) {
                     // user found and password ok
                     var token = jwt.sign({
                         name: user.name,
-                        username: user.username
+                        username: user.username,
+                        userId: user._id,
+                        roles: user.roles
                     }, config.secret, {
                         expiresInMinutes: 1440 // 24 hours
                     });
@@ -60,40 +62,39 @@ app.use(function(req, res, next) {
         
     console.log('Someone has visited the app');
     console.log(req.params);
+
+    // check header, url, param for token
+    var token = req.body.token || req.params.token || req.headers['x-access-token'];
     
-    if (config.devmode) {
+    // dev mode with no token
+    if (config.devmode && !token) {
         next();
-    } else {
-        // check header, url, param for token
-        var token = req.body.token || req.params.token || req.headers['x-access-token'];
+   
+    } else if (token) {// decode token
         
-        // decode token
-        if (token) {
+        // verify secret and check expiration
+        jwt.verify(token, config.secret, function(err, decoded) {
             
-            // verify secret and check expiration
-            jwt.verify(token, config.secret, function(err, decoded) {
+            if (err) {
+                return res.status(403).send({
+                    success: false,
+                    message: 'Failed to authenticate token.'
+                });
+            } else {
+                // all good
+                req.decoded = decoded;
                 
-                if (err) {
-                    return res.status(403).send({
-                        success: false,
-                        message: 'Failed to authenticate token.'
-                    });
-                } else {
-                    // all good
-                    req.decoded = decoded;
-                    
-                    next();
-                }
-            })
-            
-        } else {
-            
-            // no token - return http 403
-            return res.status(403).send({
-                success: false,
-                message: 'No token provided.'
-            });
-        }
+                next();
+            }
+        })
+        
+    } else {
+        
+        // no token - return http 403
+        return res.status(403).send({
+            success: false,
+            message: 'No token provided.'
+        });
     }
     
     
